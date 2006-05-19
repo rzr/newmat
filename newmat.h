@@ -560,6 +560,8 @@ public:
 
 
 
+class Matrix;
+Real DotProduct(const Matrix& A, const Matrix& B);
 class Matrix : public GeneralMatrix             // usual rectangular matrix
 {
    GeneralMatrix* Image() const;                // copy of matrix
@@ -1207,6 +1209,12 @@ public:
    NEW_DELETE(AddedMatrix)
 };
 
+class SPMatrix;
+#ifndef TEMPS_DESTROYED_QUICKLY
+   SPMatrix SP(const BaseMatrix&, const BaseMatrix&);
+#else
+   SPMatrix& SP(const BaseMatrix&, const BaseMatrix&);
+#endif
 class SPMatrix : public AddedMatrix
 {
 protected:
@@ -1230,6 +1238,12 @@ public:
    NEW_DELETE(SPMatrix)
 };
 
+class KPMatrix;
+#ifndef TEMPS_DESTROYED_QUICKLY
+   KPMatrix KP(const BaseMatrix&, const BaseMatrix&);
+#else
+   KPMatrix& KP(const BaseMatrix&, const BaseMatrix&);
+#endif
 class KPMatrix : public MultipliedMatrix
 {
 protected:
@@ -1328,6 +1342,12 @@ public:
    NEW_DELETE(ShiftedMatrix)
 };
 
+class NegShiftedMatrix;
+#ifndef TEMPS_DESTROYED_QUICKLY
+   NegShiftedMatrix operator-(Real, const BaseMatrix&);
+#else
+   NegShiftedMatrix& operator-(Real, const BaseMatrix&);
+#endif
 class NegShiftedMatrix : public ShiftedMatrix
 {
 protected:
