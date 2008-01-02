@@ -10,7 +10,6 @@
 #include "newmatnl.h"
 
 #ifdef use_namespace
-using namespace std; //#~rzr : needed for msvc
 namespace NEWMAT {
 #endif
 

@@ -7,9 +7,7 @@
 #ifndef INCLUDE_LIB
 #define INCLUDE_LIB
 
-#include "config.h" // create a blank file if missing (not using autotools) , 
-
-#define use_namespace   // define name spaces // commented by default
+//#define use_namespace                   // define name spaces
 
 //#define SETUP_C_SUBSCRIPTS              // allow element access via A[i][j]
 
@@ -38,7 +36,7 @@
 //#define ios_format_flags ios::fmtflags  // for Gnu 3 and Intel for Linux
 
 
-#define _STANDARD_    // using standard library // default is commented
+//#define _STANDARD_                    // using standard library
 
 //#define use_float_h                   // use float.h for precision data
 
@@ -75,13 +73,8 @@
       #include <limits>              // for VC++6
    #endif
    #ifdef WANT_STREAM
-      #ifdef use_namespace //#~rzr{ needed for msvc-6 msvc-7.1 msvc-8
-         #include <iostream>
-         #include <iomanip>
-      #else
-         #include <iostream.h>
-         #include <iomanip.h>
-      #endif // #~rzr}
+      #include <iostream>
+      #include <iomanip>
    #endif
    #ifdef WANT_MATH
       #include <cmath>
@@ -113,13 +106,8 @@
 //   }
 
    #ifdef WANT_STREAM
-      #ifdef use_namespace //#~rzr{ needed for msvc-6 msvc-7.1 msvc-8
-         #include <iostream>
-         #include <iomanip>
-      #else
-         #include <iostream.h>
-         #include <iomanip.h>
-      #endif // #~rzr}
+      #include <iostream.h>
+      #include <iomanip.h>
    #endif
    #ifdef WANT_MATH
       #include <math.h>

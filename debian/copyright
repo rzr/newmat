@@ -1,34 +1,37 @@
 This package was debianized by Philippe Coval <rzr@users.sf.net> on
 Sat,  1 Apr 2006 12:08:38 +0200
 
-
-
 It was downloaded from <http://www.robertnz.net/>
 
-Copyright Holder: Robert Davies <robert[a]statsresearch.co.nz>
+Upstream Author: Robert Davies <robert[a]statsresearch.co.nz>
 
-I place no restrictions on the use of newmat except that I take
-no liability for any problems that may arise from its use,
-distribution or other dealings with it.
+Copyright: 1990-2006 by Robert Davies <robert[a]statsresearch.co.nz>
 
-You can use it in your commercial projects.
+Licence:
+  I place no restrictions on the use of newmat except that I take
+  no liability for any problems that may arise from its use,
+  distribution or other dealings with it.
 
-You can make and distribute modified or merged versions. You can
-include parts of it in your own software.
+  You can use it in your commercial projects.
 
-If you distribute modified or merged versions, please make it
-clear which parts are mine and which parts are modified.
+  You can make and distribute modified or merged versions. You can
+  include parts of it in your own software.
 
-For a substantially modified version, simply note that it is,
-in part, derived from my software. A comment in the code will
-be sufficient.
+  If you distribute modified or merged versions, please make it
+  clear which parts are mine and which parts are modified.
 
-The software is provided "as is", without warranty of any kind.
+  For a substantially modified version, simply note that it is,
+  in part, derived from my software. A comment in the code will
+  be sufficient.
 
-Please understand that there may still be bugs and errors.
+  The software is provided "as is", without warranty of any kind.
 
-Use at your own risk. I (Robert Davies) take no responsibility
-for any errors or omissions in this package or for any misfortune
-that may befall you or others as a result of your use,
-distribution or other dealings with it.
+  Please understand that there may still be bugs and errors.
 
+  Use at your own risk. I (Robert Davies) take no responsibility
+  for any errors or omissions in this package or for any misfortune
+  that may befall you or others as a result of your use,
+  distribution or other dealings with it.
+
+The Debian packaging is (C) 2006, Philippe Coval <rzr@users.sf.net> 
+and is licensed under the same Licence above

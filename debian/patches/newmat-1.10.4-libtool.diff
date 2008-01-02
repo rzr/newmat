@@ -1,0 +1,228 @@
+--- newmat-1.10.4.orig/configure.in
++++ newmat-1.10.4/configure.in
+@@ -0,0 +1,35 @@
++#                                               -*- Autoconf -*-
++# Process this file with autoconf to produce a configure script.
++AC_PREREQ(2.59)
++AC_INIT(newmat, 1.10.2, rzr@users.sf.net)
++AM_INIT_AUTOMAKE(libnewmat, 1.10.2)
++
++AC_CONFIG_SRCDIR([config.h.in])
++AC_CONFIG_HEADER([config.h])
++# AC_CONFIG_FILES([Makefile]) 
++
++AC_LANG_CPLUSPLUS
++# Checks for programs.
++AC_PROG_CXX
++AC_PROG_CC
++AC_PROG_INSTALL
++AC_PROG_LIBTOOL
++
++# Checks for libraries.
++
++# Checks for header files.
++AC_CHECK_HEADER( [ float.h , cstdlib , setjmp.h , limits ] )
++
++# Checks for typedefs, structures, and compiler characteristics.
++AC_HEADER_STDBOOL
++AC_C_CONST
++AC_C_INLINE
++AC_TYPE_SIZE_T
++AC_STRUCT_TM
++
++# Checks for library functions.
++AC_CHECK_FUNCS([floor pow sqrt])
++AC_OUTPUT( [Makefile] )
++
++
++#eof "Id: configure.in -- pcoval $"
+--- newmat-1.10.4.orig/Makefile.am
++++ newmat-1.10.4/Makefile.am
+@@ -0,0 +1,37 @@
++#ident "$Id: Makefile.am -- pcoval"
++lib_LTLIBRARIES = libnewmat.la
++
++libnewmat_la_LDFLAGS = -version-info 10:0:0
++
++libnewmat_la_SOURCES = \
++  newmat1.cpp newmat2.cpp newmat3.cpp newmat4.cpp newmat5.cpp newmat6.cpp \
++  newmat7.cpp newmat8.cpp newmatex.cpp bandmat.cpp submat.cpp myexcept.cpp \
++  cholesky.cpp evalue.cpp fft.cpp hholder.cpp jacobi.cpp newfft.cpp \
++  sort.cpp svd.cpp newmatrm.cpp newmat9.cpp
++ #
++
++pkgincludedir = $(includedir)/newmat
++
++pkginclude_HEADERS = \
++  config.h include.h \
++  boolean.h controlw.h myexcept.h newmat.h newmatnl.h newmatrm.h solution.h \
++  newmatap.h  newmatio.h  newmatrc.h  precisio.h
++ #
++
++bin_PROGRAMS = example test_exc tmt
++
++example_SOURCES = example.cpp
++example_LDFLAGS = -lnewmat
++
++test_exc_SOURCES = test_exc.cpp
++test_exc_LDFLAGS = -lnewmat
++
++
++tmt_SOURCES = tmt.cpp \
++  tmt1.cpp tmt2.cpp tmt3.cpp tmt4.cpp tmt5.cpp tmt6.cpp tmt7.cpp tmt8.cpp \
++  tmt9.cpp tmta.cpp tmtb.cpp tmtc.cpp tmtd.cpp tmte.cpp tmtf.cpp tmtg.cpp \
++  tmth.cpp tmti.cpp tmtj.cpp tmtk.cpp tmtl.cpp tmtm.cpp
++ #
++tmt_LDFLAGS = -lnewmat
++
++#eof "$Id: Makefile.am -- pcoval"
+
+--- newmat-1.10.4.orig/newmat.h
++++ newmat-1.10.4/newmat.h
+@@ -560,6 +560,8 @@
+ 
+ 
+ 
++class Matrix;
++Real DotProduct(const Matrix& A, const Matrix& B);
+ class Matrix : public GeneralMatrix             // usual rectangular matrix
+ {
+    GeneralMatrix* Image() const;                // copy of matrix
+@@ -1207,6 +1209,12 @@
+    NEW_DELETE(AddedMatrix)
+ };
+ 
++class SPMatrix;
++#ifndef TEMPS_DESTROYED_QUICKLY
++   SPMatrix SP(const BaseMatrix&, const BaseMatrix&);
++#else
++   SPMatrix& SP(const BaseMatrix&, const BaseMatrix&);
++#endif
+ class SPMatrix : public AddedMatrix
+ {
+ protected:
+@@ -1230,6 +1238,12 @@
+    NEW_DELETE(SPMatrix)
+ };
+ 
++class KPMatrix;
++#ifndef TEMPS_DESTROYED_QUICKLY
++   KPMatrix KP(const BaseMatrix&, const BaseMatrix&);
++#else
++   KPMatrix& KP(const BaseMatrix&, const BaseMatrix&);
++#endif
+ class KPMatrix : public MultipliedMatrix
+ {
+ protected:
+@@ -1328,6 +1342,12 @@
+    NEW_DELETE(ShiftedMatrix)
+ };
+ 
++class NegShiftedMatrix;
++#ifndef TEMPS_DESTROYED_QUICKLY
++   NegShiftedMatrix operator-(Real, const BaseMatrix&);
++#else
++   NegShiftedMatrix& operator-(Real, const BaseMatrix&);
++#endif
+ class NegShiftedMatrix : public ShiftedMatrix
+ {
+ protected:
+--- newmat-1.10.4.orig/tmt1.cpp
++++ newmat-1.10.4/tmt1.cpp
+@@ -10,6 +10,7 @@
+ #include "tmt.h"
+ 
+ #ifdef use_namespace
++using namespace std; //#~rzr : needed for msvc
+ using namespace NEWMAT;
+ #endif
+ 
+--- newmat-1.10.4.orig/tmtm.cpp
++++ newmat-1.10.4/tmtm.cpp
+@@ -8,6 +8,7 @@
+ #include "tmt.h"
+ 
+ #ifdef use_namespace
++using namespace std; //#~rzr : needed for msvc
+ using namespace NEWMAT;
+ #endif
+ 
+--- newmat-1.10.4.orig/newmatnl.cpp
++++ newmat-1.10.4/newmatnl.cpp
+@@ -10,6 +10,7 @@
+ #include "newmatnl.h"
+ 
+ #ifdef use_namespace
++using namespace std; //#~rzr : needed for msvc
+ namespace NEWMAT {
+ #endif
+ 
+--- newmat-1.10.4.orig/include.h
++++ newmat-1.10.4/include.h
+@@ -7,7 +7,9 @@
+ #ifndef INCLUDE_LIB
+ #define INCLUDE_LIB
+ 
+-//#define use_namespace                   // define name spaces
++#include "config.h" // create a blank file if missing (not using autotools) , 
++
++#define use_namespace   // define name spaces // commented by default
+ 
+ //#define SETUP_C_SUBSCRIPTS              // allow element access via A[i][j]
+ 
+@@ -36,7 +38,7 @@
+ //#define ios_format_flags ios::fmtflags  // for Gnu 3 and Intel for Linux
+ 
+ 
+-//#define _STANDARD_                    // using standard library
++#define _STANDARD_    // using standard library // default is commented
+ 
+ //#define use_float_h                   // use float.h for precision data
+ 
+@@ -73,8 +75,13 @@
+       #include <limits>              // for VC++6
+    #endif
+    #ifdef WANT_STREAM
+-      #include <iostream>
+-      #include <iomanip>
++      #ifdef use_namespace //#~rzr{ needed for msvc-6 msvc-7.1 msvc-8
++         #include <iostream>
++         #include <iomanip>
++      #else
++         #include <iostream.h>
++         #include <iomanip.h>
++      #endif // #~rzr}
+    #endif
+    #ifdef WANT_MATH
+       #include <cmath>
+@@ -106,8 +113,13 @@
+ //   }
+ 
+    #ifdef WANT_STREAM
+-      #include <iostream.h>
+-      #include <iomanip.h>
++      #ifdef use_namespace //#~rzr{ needed for msvc-6 msvc-7.1 msvc-8
++         #include <iostream>
++         #include <iomanip>
++      #else
++         #include <iostream.h>
++         #include <iomanip.h>
++      #endif // #~rzr}
+    #endif
+    #ifdef WANT_MATH
+       #include <math.h>
+--- newmat-1.10.4.orig/ChangeLog
++++ newmat-1.10.4/ChangeLog
+@@ -0,0 +1,12 @@
++Version 10C makes the conditions of use compatible with Debian
++distribution, replaces include.h, myexcept.h, myexcept.cpp, precisio.h
++with recent versions, includes additional make files and makes a
++few minor corrections. 
++
++Version 10B corrects incompatibilities with Gnu G++ version 3.4 and
++Intel C++ for Windows, 8.1. Include.h, myexcept.h, myexcept.cpp,
++precisio.h are replaced with recent versions.
++
++Version 10A corrects an error on the Kronecker production function and
++you can now run Gnu G++ version 3 and Intel for Linux without making
++any modifications.

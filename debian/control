@@ -1,15 +1,17 @@
 Source: newmat
 Priority: optional
 Maintainer: Philippe Coval <rzr@users.sf.net>
-Uploader: Andreas Tille <tille@debian.org>
-Build-Depends: debhelper (>= 4.0.0), autotools-dev, automake1.7, autoconf (>> 2.13), libtool , libltdl3-dev
-Standards-Version: 3.6.2
+Build-Depends: debhelper (>= 4.0.0), autotools-dev, automake1.7, autoconf (>> 2.13), libtool , libltdl3-dev, quilt
+Standards-Version: 3.7.3
 Section: libs
+Homepage: http://www.robertnz.net/nm_intro.htm
 
-Package: libnewmat10
+Package: libnewmat10ldbl
+Provides: libnewmat
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: libnewmat10 (<<1.10.4-3)
 Description: matrix manipulations C++ library
  Newmat library is intended for scientists and engineers 
  who need to manipulate a variety of types of matrices 
@@ -23,7 +25,7 @@ Description: matrix manipulations C++ library
  SymmetricBandMatrix; IdentityMatrix;
  RowVector; ColumnVector.
  .
- Only one element type (float or double) is supported.
+ Only one element type (float or double) is supported (default is double).
  .
  The library includes the operations *, +, -, *=, +=, -=, Kronecker product,
  Schur product, concatenation, inverse, transpose, conversion between types,
@@ -35,7 +37,7 @@ Package: libnewmat10-dev
 Provides: libnewmat-dev
 Section: libdevel
 Architecture: any
-Depends: libnewmat10 (= ${Source-Version})
+Depends: libnewmat10ldbl (= ${binary:Version})
 Description: matrix manipulations C++ library
  Newmat library is intended for scientists and engineers 
  who need to manipulate a variety of types of matrices 
@@ -58,3 +60,4 @@ Description: matrix manipulations C++ library
  fast Fourier and trig. transforms and printing.
  .
  libnewmat-dev contains static libraries, headers, and some documentation.
+

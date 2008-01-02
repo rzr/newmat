@@ -1,3 +1,17 @@
+newmat (1.10.4-4) unstable; urgency=low
+
+  * FIX: debian/watch (Closes: #450048)
+  * FIX: conflict with libnewmat10 and provide libnewmat (Closes: #435313)
+  * ADD: use quilt for patches
+
+ -- Philippe Coval <rzr@users.sf.net>  Wed, 02 Jan 2008 10:08:32 +0100
+
+newmat (1.10.4-3) unstable; urgency=low
+
+  * ldbl128 transition for alpha, powerpc, sparc, s390. Closes: #430278
+
+ -- Philippe Coval <rzr@users.sf.net>  Sun, 22 Jul 2007 03:01:04 +0200
+
 newmat (1.10.4-2) unstable; urgency=low
 
   * Closes: #367875 (for g++ 4.1 support)
