@@ -1,18 +1,17 @@
 Source: newmat
 Priority: optional
-Maintainer: Philippe Coval <rzr@users.sf.net>
-Build-Depends: debhelper (>= 4.0.0), autotools-dev, automake1.7, autoconf (>> 2.13), libtool , libltdl3-dev, quilt
-Standards-Version: 3.7.3
+Maintainer: Philippe Coval <rzr@gna.org>
+Build-Depends: debhelper (>= 6.0.0), autotools-dev, automake | automaken , autoconf (>> 2.13), libtool , libltdl7-dev | libltdl-dev, quilt
+Standards-Version: 3.8.2
 Section: libs
 Homepage: http://www.robertnz.net/nm_intro.htm
 
 Package: libnewmat10ldbl
 Provides: libnewmat
-Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: libnewmat10 (<<1.10.4-3)
-Description: matrix manipulations C++ library
+Description: matrix manipulations library (C++)
  Newmat library is intended for scientists and engineers 
  who need to manipulate a variety of types of matrices 
  using standard matrix operations.
@@ -38,7 +37,7 @@ Provides: libnewmat-dev
 Section: libdevel
 Architecture: any
 Depends: libnewmat10ldbl (= ${binary:Version})
-Description: matrix manipulations C++ library
+Description: matrix manipulations library (C++ headers files)
  Newmat library is intended for scientists and engineers 
  who need to manipulate a variety of types of matrices 
  using standard matrix operations.

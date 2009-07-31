@@ -1,2 +1,3 @@
-version=2
-http://www.robertnz.net/download.html newmat([\d\.]*)\.tar\.gz
+version=3
+http://www.robertnz.net/download.html \
+  ftp/newmat(.*)\.tar\.gz

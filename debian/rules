@@ -1,13 +1,11 @@
 #! /usr/bin/make -f
 # -*- makefile -*-
-# Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
 include /usr/share/quilt/quilt.make
 
 DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
-
 
 CXXFLAGS = -Wall -g $(DEB_ARCH_OPT_FLAGS)
 
@@ -25,22 +23,25 @@ awk '{if (match($$0,/\.so\.[0-9]+$$/)) print substr($$0,RSTART+4)}'`
 
 #autotools_input := configure.in Makefile.am
 
+config: configure-stamp
+
 config-stamp: patch
 #	cp -f $(patsubst %,debian/%,$(autotools_input)) .
 	${SHELL} ./debian/bootstrap
 # 	autoreconf --force --install
 	touch $@
 
-config.status: config-stamp
+configure-stamp: config-stamp
 	dh_testdir
 	CFLAGS="$(CFLAGS) -Wl,-z,defs" \
 	 ./configure --host=$(DEB_HOST_GNU_TYPE) \
 	 --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr \
 	 --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info
+	touch $@
 
 build: build-stamp
 
-build-stamp:  config.status
+build-stamp: configure-stamp
 	dh_testdir
 	$(MAKE)
 #{ regression tests
@@ -48,7 +49,7 @@ build-stamp:  config.status
 	./tmt
 	./test_exc
 #}
-	touch build-stamp
+	touch $@
 
 generated_files?=\
  a.out aclocal.m4 config.log config.sub config.guess \
@@ -58,19 +59,17 @@ generated_files?=\
  configure.in Makefile.am ChangeLog \
  #  config.h
 
-autoclean:
-	rm -f ${generated_files}
-	rm -rf libltdl
-
 distclean: clean
 	rm -rf *stamp
 
-clean: autoclean unpatch
+clean: unpatch
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp config-stamp
-	$(MAKE) -k distclean || echo "ignored"
-	-${RM} *.lo NEWS INSTALL *~
+	rm -f build-stamp config-stamp configure-stamp
+	-[ ! -f Makefile ] || $(MAKE) -k distclean 
+	rm -f ${generated_files} *.tmp
+	rm -rf libltdl
+	rm -f *.lo NEWS INSTALL *~
 	dh_clean 
 
 install: build
@@ -82,7 +81,7 @@ install: build
 
 binary-indep: build install
 
-binary-arch: build install unpatch
+binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_movefiles
@@ -102,6 +101,6 @@ binary-arch: build install unpatch
 	dh_builddeb
 
 binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install 
+.PHONY: build clean binary-indep binary-arch binary install
 
 #eof "$Id: debian/rules -- pcoval $"

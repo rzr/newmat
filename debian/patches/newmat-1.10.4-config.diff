@@ -1,0 +1,515 @@
+Index: newmat-1.10.4/bandmat.cpp
+===================================================================
+--- newmat-1.10.4.orig/bandmat.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/bandmat.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -7,6 +7,7 @@
+ //#define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ #include "newmatrc.h"
+Index: newmat-1.10.4/cholesky.cpp
+===================================================================
+--- newmat-1.10.4.orig/cholesky.cpp	2008-06-08 15:35:55.000000000 +0200
++++ newmat-1.10.4/cholesky.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -6,6 +6,7 @@
+ //#define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ 
+Index: newmat-1.10.4/evalue.cpp
+===================================================================
+--- newmat-1.10.4.orig/evalue.cpp	2008-06-08 15:35:52.000000000 +0200
++++ newmat-1.10.4/evalue.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -5,6 +5,8 @@
+ #define WANT_MATH
+ 
+ #include "include.h"
++#include "config.h"
++
+ #include "newmatap.h"
+ #include "newmatrm.h"
+ #include "precisio.h"
+Index: newmat-1.10.4/fft.cpp
+===================================================================
+--- newmat-1.10.4.orig/fft.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/fft.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -7,6 +7,7 @@
+ // #define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmatap.h"
+ 
+Index: newmat-1.10.4/hholder.cpp
+===================================================================
+--- newmat-1.10.4.orig/hholder.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/hholder.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -5,6 +5,7 @@
+ #define WANT_MATH
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmatap.h"
+ 
+Index: newmat-1.10.4/jacobi.cpp
+===================================================================
+--- newmat-1.10.4.orig/jacobi.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/jacobi.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -9,6 +9,8 @@
+ #define WANT_MATH
+ 
+ #include "include.h"
++#include "config.h"
++
+ #include "newmatap.h"
+ #include "precisio.h"
+ #include "newmatrm.h"
+Index: newmat-1.10.4/myexcept.cpp
+===================================================================
+--- newmat-1.10.4.orig/myexcept.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/myexcept.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -17,7 +17,7 @@
+ #define WANT_STRING
+ 
+ #include "include.h"                   // include standard files
+-
++#include "config.h"
+ 
+ #include "myexcept.h"                  // for exception handling
+ 
+Index: newmat-1.10.4/newmat2.cpp
+===================================================================
+--- newmat-1.10.4.orig/newmat2.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/newmat2.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -5,6 +5,7 @@
+ #define WANT_MATH
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ #include "newmatrc.h"
+Index: newmat-1.10.4/newmat3.cpp
+===================================================================
+--- newmat-1.10.4.orig/newmat3.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/newmat3.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -5,6 +5,7 @@
+ //#define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ #include "newmatrc.h"
+Index: newmat-1.10.4/newmat4.cpp
+===================================================================
+--- newmat-1.10.4.orig/newmat4.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/newmat4.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -3,6 +3,7 @@
+ // Copyright (C) 1991,2,3,4,8,9: R B Davies
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ #include "newmatrc.h"
+Index: newmat-1.10.4/newmat5.cpp
+===================================================================
+--- newmat-1.10.4.orig/newmat5.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/newmat5.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -5,6 +5,7 @@
+ //#define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ #include "newmatrc.h"
+Index: newmat-1.10.4/newmat6.cpp
+===================================================================
+--- newmat-1.10.4.orig/newmat6.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/newmat6.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -3,6 +3,7 @@
+ // Copyright (C) 1991,2,3,4: R B Davies
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ #include "newmatrc.h"
+Index: newmat-1.10.4/newmat7.cpp
+===================================================================
+--- newmat-1.10.4.orig/newmat7.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/newmat7.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -3,6 +3,7 @@
+ // Copyright (C) 1991,2,3,4: R B Davies
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ #include "newmatrc.h"
+Index: newmat-1.10.4/newmat8.cpp
+===================================================================
+--- newmat-1.10.4.orig/newmat8.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/newmat8.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -5,6 +5,7 @@
+ #define WANT_MATH
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ #include "newmatrc.h"
+Index: newmat-1.10.4/newmat9.cpp
+===================================================================
+--- newmat-1.10.4.orig/newmat9.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/newmat9.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -6,6 +6,8 @@
+ #define WANT_FSTREAM
+ 
+ #include "include.h"
++#include "config.h"
++
+ 
+ #include "newmat.h"
+ #include "newmatio.h"
+Index: newmat-1.10.4/newmatex.cpp
+===================================================================
+--- newmat-1.10.4.orig/newmatex.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/newmatex.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -5,6 +5,8 @@
+ #define WANT_STREAM                  // include.h will get stream fns
+ 
+ #include "include.h"                 // include standard files
++#include "config.h"
++
+ #include "newmat.h"
+ 
+ #ifdef use_namespace
+Index: newmat-1.10.4/sl_ex.cpp
+===================================================================
+--- newmat-1.10.4.orig/sl_ex.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/sl_ex.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -7,6 +7,8 @@
+ #define WANT_MATH
+ 
+ #include "include.h"
++#include "config.h"
++
+ #include "solution.h"
+ 
+ #ifdef use_namespace
+Index: newmat-1.10.4/solution.cpp
+===================================================================
+--- newmat-1.10.4.orig/solution.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/solution.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -7,6 +7,8 @@
+ #define WANT_MATH                    // include.h will get math fns
+ 
+ #include "include.h"
++#include "config.h"
++
+ #include "boolean.h"
+ #include "myexcept.h"
+ 
+Index: newmat-1.10.4/sort.cpp
+===================================================================
+--- newmat-1.10.4.orig/sort.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/sort.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -5,6 +5,7 @@
+ #define WANT_MATH
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmatap.h"
+ 
+Index: newmat-1.10.4/submat.cpp
+===================================================================
+--- newmat-1.10.4.orig/submat.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/submat.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -3,6 +3,7 @@
+ // Copyright (C) 1991,2,3,4: R B Davies
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ #include "newmatrc.h"
+Index: newmat-1.10.4/svd.cpp
+===================================================================
+--- newmat-1.10.4.orig/svd.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/svd.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -6,6 +6,8 @@
+ #define WANT_MATH
+ 
+ #include "include.h"
++#include "config.h"
++
+ #include "newmatap.h"
+ #include "newmatrm.h"
+ #include "precisio.h"
+Index: newmat-1.10.4/tmt.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmt.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/tmt.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -1,6 +1,7 @@
+ #define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ 
+Index: newmat-1.10.4/tmt1.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmt1.cpp	2008-06-08 15:36:19.000000000 +0200
++++ newmat-1.10.4/tmt1.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -4,6 +4,7 @@
+ 
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ 
+Index: newmat-1.10.4/tmt2.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmt2.cpp	2008-06-08 15:35:52.000000000 +0200
++++ newmat-1.10.4/tmt2.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -3,6 +3,7 @@
+ 
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ 
+Index: newmat-1.10.4/tmt3.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmt3.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/tmt3.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -2,6 +2,7 @@
+ //#define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ 
+Index: newmat-1.10.4/tmt4.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmt4.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/tmt4.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -3,6 +3,7 @@
+ 
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ 
+Index: newmat-1.10.4/tmt5.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmt5.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/tmt5.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -2,6 +2,7 @@
+ //#define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ 
+Index: newmat-1.10.4/tmt6.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmt6.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/tmt6.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -4,6 +4,7 @@
+ 
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmatap.h"
+ 
+Index: newmat-1.10.4/tmt7.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmt7.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/tmt7.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -2,6 +2,7 @@
+ //#define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ 
+Index: newmat-1.10.4/tmt8.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmt8.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/tmt8.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -2,6 +2,7 @@
+ //#define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmatap.h"
+ 
+Index: newmat-1.10.4/tmt9.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmt9.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/tmt9.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -1,6 +1,8 @@
+ //#define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
++
+ #include "newmatap.h"
+ 
+ #include "tmt.h"
+Index: newmat-1.10.4/tmta.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmta.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/tmta.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -3,6 +3,7 @@
+ 
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmatap.h"
+ 
+Index: newmat-1.10.4/tmtb.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmtb.cpp	2008-06-08 15:35:52.000000000 +0200
++++ newmat-1.10.4/tmtb.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -2,6 +2,7 @@
+ //#define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmat.h"
+ 
+Index: newmat-1.10.4/tmtc.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmtc.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/tmtc.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -3,6 +3,8 @@
+ 
+ 
+ #include "include.h"
++#include "config.h"
++
+ #include "newmat.h"
+ 
+ #include "tmt.h"
+Index: newmat-1.10.4/tmtd.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmtd.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/tmtd.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -2,6 +2,8 @@
+ //#define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
++
+ #include "newmatap.h"
+ 
+ #include "tmt.h"
+Index: newmat-1.10.4/tmte.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmte.cpp	2008-06-08 15:35:52.000000000 +0200
++++ newmat-1.10.4/tmte.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -3,6 +3,7 @@
+ #define WANT_MATH
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmatap.h"
+ //#include "newmatio.h"
+Index: newmat-1.10.4/tmtf.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmtf.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/tmtf.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -3,6 +3,7 @@
+ #define WANT_MATH
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmatap.h"
+ 
+Index: newmat-1.10.4/tmtg.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmtg.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/tmtg.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -4,6 +4,7 @@
+ #define WANT_MATH                   // for sqrt
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmatap.h"
+ 
+Index: newmat-1.10.4/tmth.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmth.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/tmth.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -2,6 +2,7 @@
+ //#define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmatap.h"
+ //#include "newmatio.h"
+Index: newmat-1.10.4/tmti.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmti.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/tmti.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -2,6 +2,7 @@
+ //#define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmatap.h"
+ //#include "newmatio.h"
+Index: newmat-1.10.4/tmtj.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmtj.cpp	2008-06-08 15:35:54.000000000 +0200
++++ newmat-1.10.4/tmtj.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -2,6 +2,7 @@
+ //#define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmatap.h"
+ //#include "newmatio.h"
+Index: newmat-1.10.4/tmtk.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmtk.cpp	2008-06-08 15:35:53.000000000 +0200
++++ newmat-1.10.4/tmtk.cpp	2008-06-08 15:36:31.000000000 +0200
+@@ -2,6 +2,7 @@
+ #define WANT_STREAM
+ 
+ #include "include.h"
++#include "config.h"
+ 
+ #include "newmatap.h"
+ #include "newmatio.h"

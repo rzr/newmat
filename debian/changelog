@@ -1,3 +1,21 @@
+newmat (1.10.4-5) unstable; urgency=low
+
+  * debian/control:
+    + Updated to latest standards and autotools
+    + Updated description
+  * debian/rules:
+    + clean before unpatch for format "3.0 (quilt)" (Closes: #485106)
+    + patch before configure
+  * debian/watch:
+    + updated to track upcoming version if needed
+  * debian/copyright debian/README.Debian:
+    + updated and changed maintainer email (sf.net was bouncing)
+  * ./*.cpp:
+    + include config.h in cpp files (instead of include.h),
+      will prevent propagation on config.h defines (LP: #204338)
+
+ -- Philippe Coval <rzr@gna.org>  Sat, 01 Aug 2009 00:56:03 +0200
+
 newmat (1.10.4-4) unstable; urgency=low
 
   * FIX: debian/watch (Closes: #450048)
@@ -29,5 +47,3 @@ newmat (1.10.3-1) unstable; urgency=low
   * Initial release Closes: #335185
 
  -- Philippe Coval <rzr@users.sf.net>  Sat,  1 Apr 2006 12:08:38 +0200
-
-

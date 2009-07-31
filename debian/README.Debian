@@ -8,4 +8,4 @@ Using default settings plus C++ namespaces support to prevent polution
 Only one element type (float or double) is supported 
 (compiled version is double).
 
- -- Philippe Coval <rzr@users.sf.net>, Sat,  1 Apr 2006 12:08:38 +0200
+ -- Philippe Coval <rzr@gna.org>, Sat,  1 Apr 2006 12:08:38 +0200

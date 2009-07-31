@@ -1,5 +1,7 @@
---- newmat-1.10.4.orig/configure.in
-+++ newmat-1.10.4/configure.in
+Index: newmat-1.10.4/configure.in
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ newmat-1.10.4/configure.in	2008-06-08 15:36:19.000000000 +0200
 @@ -0,0 +1,35 @@
 +#                                               -*- Autoconf -*-
 +# Process this file with autoconf to produce a configure script.
@@ -36,8 +38,10 @@
 +
 +
 +#eof "Id: configure.in -- pcoval $"
---- newmat-1.10.4.orig/Makefile.am
-+++ newmat-1.10.4/Makefile.am
+Index: newmat-1.10.4/Makefile.am
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ newmat-1.10.4/Makefile.am	2008-06-08 15:36:19.000000000 +0200
 @@ -0,0 +1,37 @@
 +#ident "$Id: Makefile.am -- pcoval"
 +lib_LTLIBRARIES = libnewmat.la
@@ -76,9 +80,10 @@
 +tmt_LDFLAGS = -lnewmat
 +
 +#eof "$Id: Makefile.am -- pcoval"
-
---- newmat-1.10.4.orig/newmat.h
-+++ newmat-1.10.4/newmat.h
+Index: newmat-1.10.4/newmat.h
+===================================================================
+--- newmat-1.10.4.orig/newmat.h	2008-06-08 15:36:13.000000000 +0200
++++ newmat-1.10.4/newmat.h	2008-06-08 15:36:19.000000000 +0200
 @@ -560,6 +560,8 @@
  
  
@@ -127,8 +132,10 @@
  class NegShiftedMatrix : public ShiftedMatrix
  {
  protected:
---- newmat-1.10.4.orig/tmt1.cpp
-+++ newmat-1.10.4/tmt1.cpp
+Index: newmat-1.10.4/tmt1.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmt1.cpp	2008-06-08 15:36:14.000000000 +0200
++++ newmat-1.10.4/tmt1.cpp	2008-06-08 15:36:19.000000000 +0200
 @@ -10,6 +10,7 @@
  #include "tmt.h"
  
@@ -137,8 +144,10 @@
  using namespace NEWMAT;
  #endif
  
---- newmat-1.10.4.orig/tmtm.cpp
-+++ newmat-1.10.4/tmtm.cpp
+Index: newmat-1.10.4/tmtm.cpp
+===================================================================
+--- newmat-1.10.4.orig/tmtm.cpp	2008-06-08 15:36:14.000000000 +0200
++++ newmat-1.10.4/tmtm.cpp	2008-06-08 15:36:19.000000000 +0200
 @@ -8,6 +8,7 @@
  #include "tmt.h"
  
@@ -147,8 +156,10 @@
  using namespace NEWMAT;
  #endif
  
---- newmat-1.10.4.orig/newmatnl.cpp
-+++ newmat-1.10.4/newmatnl.cpp
+Index: newmat-1.10.4/newmatnl.cpp
+===================================================================
+--- newmat-1.10.4.orig/newmatnl.cpp	2008-06-08 15:36:13.000000000 +0200
++++ newmat-1.10.4/newmatnl.cpp	2008-06-08 15:36:19.000000000 +0200
 @@ -10,6 +10,7 @@
  #include "newmatnl.h"
  
@@ -157,8 +168,10 @@
  namespace NEWMAT {
  #endif
  
---- newmat-1.10.4.orig/include.h
-+++ newmat-1.10.4/include.h
+Index: newmat-1.10.4/include.h
+===================================================================
+--- newmat-1.10.4.orig/include.h	2008-06-08 15:36:14.000000000 +0200
++++ newmat-1.10.4/include.h	2008-06-08 15:36:19.000000000 +0200
 @@ -7,7 +7,9 @@
  #ifndef INCLUDE_LIB
  #define INCLUDE_LIB
@@ -211,8 +224,10 @@
     #endif
     #ifdef WANT_MATH
        #include <math.h>
---- newmat-1.10.4.orig/ChangeLog
-+++ newmat-1.10.4/ChangeLog
+Index: newmat-1.10.4/ChangeLog
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ newmat-1.10.4/ChangeLog	2008-06-08 15:36:19.000000000 +0200
 @@ -0,0 +1,12 @@
 +Version 10C makes the conditions of use compatible with Debian
 +distribution, replaces include.h, myexcept.h, myexcept.cpp, precisio.h
