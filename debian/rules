@@ -15,6 +15,8 @@ else
 	CXXFLAGS += -O2
 endif
 
+CXXFLAGS += -std=gnu++98
+
 # shared library versions,
 version=`ls src/.libs/lib*.so.* | \
 awk '{if (match($$0,/[0-9]+\.[0-9]+\.[0-9]+$$/)) print substr($$0,RSTART)}'`
@@ -33,7 +35,7 @@ config-stamp: patch
 
 configure-stamp: config-stamp
 	dh_testdir
-	CFLAGS="$(CFLAGS) -Wl,-z,defs" \
+	CXXFLAGS="$(CXXFLAGS)" CFLAGS="$(CFLAGS) -Wl,-z,defs" \
 	 ./configure --host=$(DEB_HOST_GNU_TYPE) \
 	 --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr \
 	 --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info
