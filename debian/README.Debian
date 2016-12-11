@@ -3,9 +3,9 @@ newmat for Debian
 
 Upstream version name was 10C renamed to 1.10.2
 
-Using default settings plus C++ namespaces support to prevent polution
+Using default settings plus C++ namespaces support to prevent pollution
 
-Only one element type (float or double) is supported 
+Only one element type (float or double) is supported
 (compiled version is double).
 
- -- Philippe Coval <rzr@gna.org>, Sat,  1 Apr 2006 12:08:38 +0200
+ -- Philippe Coval <rzr@gna.org>, Sun, 11 Dec 2016 15:21:34 +0100
