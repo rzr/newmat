@@ -3,27 +3,27 @@ Priority: optional
 Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
 Uploaders: Philippe Coval <rzr@gna.org>
 Build-Depends: debhelper (>= 6.0.0), autotools-dev, automake | automaken , autoconf (>> 2.13), libtool , libltdl7-dev | libltdl-dev, quilt
-Standards-Version: 3.8.2
+Standards-Version: 3.9.8
 Section: libs
 Homepage: http://www.robertnz.net/nm_intro.htm
-Vcs-Git: git://anonscm.debian.org/git/debian-science/packages/newmat.git
-Vcs-Browser: https://anonscm.debian.org/cgit/debian-science/packages/newmat.git
+Vcs-Git: https://anonscm.debian.org/git/debian-science/packages/newmat
+Vcs-Browser: https://anonscm.debian.org/cgit/debian-science/packages/newmat
 
 Package: libnewmat10ldbl
 Provides: libnewmat
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Conflicts: libnewmat10 (<<1.10.4-3)
+Breaks: libnewmat10 (<<1.10.4-3)
 Description: matrix manipulations library (C++)
- Newmat library is intended for scientists and engineers 
- who need to manipulate a variety of types of matrices 
+ Newmat library is intended for scientists and engineers
+ who need to manipulate a variety of types of matrices
  using standard matrix operations.
  Emphasis is on the kind of operations needed in statistical calculations
  such as least squares, linear equation solve and eigenvalues.
  .
- Newmat supports matrix types: Matrix (rectangular matrix); 
- UpperTriangularMatrix; LowerTriangularMatrix; DiagonalMatrix; 
- SymmetricMatrix; BandMatrix; UpperBandMatrix; LowerBandMatrix; 
+ Newmat supports matrix types: Matrix (rectangular matrix);
+ UpperTriangularMatrix; LowerTriangularMatrix; DiagonalMatrix;
+ SymmetricMatrix; BandMatrix; UpperBandMatrix; LowerBandMatrix;
  SymmetricBandMatrix; IdentityMatrix;
  RowVector; ColumnVector.
  .
@@ -39,17 +39,17 @@ Package: libnewmat10-dev
 Provides: libnewmat-dev
 Section: libdevel
 Architecture: any
-Depends: libnewmat10ldbl (= ${binary:Version})
+Depends: libnewmat10ldbl (= ${binary:Version}), ${misc:Depends}
 Description: matrix manipulations library (C++ headers files)
- Newmat library is intended for scientists and engineers 
- who need to manipulate a variety of types of matrices 
+ Newmat library is intended for scientists and engineers
+ who need to manipulate a variety of types of matrices
  using standard matrix operations.
  Emphasis is on the kind of operations needed in statistical calculations
  such as least squares, linear equation solve and eigenvalues.
  .
- Newmat supports matrix types: Matrix (rectangular matrix); 
- UpperTriangularMatrix; LowerTriangularMatrix; DiagonalMatrix; 
- SymmetricMatrix; BandMatrix; UpperBandMatrix; LowerBandMatrix; 
+ Newmat supports matrix types: Matrix (rectangular matrix);
+ UpperTriangularMatrix; LowerTriangularMatrix; DiagonalMatrix;
+ SymmetricMatrix; BandMatrix; UpperBandMatrix; LowerBandMatrix;
  SymmetricBandMatrix; IdentityMatrix;
  RowVector; ColumnVector.
  .
