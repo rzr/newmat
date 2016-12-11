@@ -1,3 +1,16 @@
+newmat (1.10.4-6) UNRELEASED; urgency=medium
+
+  [ Philippe Coval ]
+  * debian/source: Add missing format file (3.0)
+
+  [ Adrian Bunk ]
+  * debian/rules: Fix/Workaround for the newmat FTBFS (#812280)
+
+  [ Philippe Coval ]
+  * debian/control: Switch to team maintenance
+
+ -- Philippe Coval <rzr@gna.org>  Sun, 11 Dec 2016 14:23:04 +0100
+
 newmat (1.10.4-5) unstable; urgency=low
 
   * debian/control:
