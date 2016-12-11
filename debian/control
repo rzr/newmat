@@ -1,10 +1,13 @@
 Source: newmat
 Priority: optional
-Maintainer: Philippe Coval <rzr@gna.org>
+Maintainer: Debian Science Team <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Philippe Coval <rzr@gna.org>
 Build-Depends: debhelper (>= 6.0.0), autotools-dev, automake | automaken , autoconf (>> 2.13), libtool , libltdl7-dev | libltdl-dev, quilt
 Standards-Version: 3.8.2
 Section: libs
 Homepage: http://www.robertnz.net/nm_intro.htm
+Vcs-Git: git://anonscm.debian.org/git/debian-science/packages/newmat.git
+Vcs-Browser: https://anonscm.debian.org/cgit/debian-science/packages/newmat.git
 
 Package: libnewmat10ldbl
 Provides: libnewmat
