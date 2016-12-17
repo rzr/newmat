@@ -4,6 +4,7 @@
 #define WANT_MATH                   // for sqrt
 
 #include "include.h"
+#include "config.h"
 
 #include "newmatap.h"
 

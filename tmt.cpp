@@ -1,6 +1,7 @@
 #define WANT_STREAM
 
 #include "include.h"
+#include "config.h"
 
 #include "newmat.h"
 

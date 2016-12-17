@@ -5,6 +5,8 @@
 #define WANT_MATH
 
 #include "include.h"
+#include "config.h"
+
 #include "newmatap.h"
 #include "newmatrm.h"
 #include "precisio.h"

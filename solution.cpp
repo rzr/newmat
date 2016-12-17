@@ -7,6 +7,8 @@
 #define WANT_MATH                    // include.h will get math fns
 
 #include "include.h"
+#include "config.h"
+
 #include "boolean.h"
 #include "myexcept.h"
 

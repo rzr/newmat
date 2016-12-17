@@ -3,6 +3,7 @@
 // Copyright (C) 1991,2,3,4,8,9: R B Davies
 
 #include "include.h"
+#include "config.h"
 
 #include "newmat.h"
 #include "newmatrc.h"

@@ -17,7 +17,7 @@
 #define WANT_STRING
 
 #include "include.h"                   // include standard files
-
+#include "config.h"
 
 #include "myexcept.h"                  // for exception handling
 

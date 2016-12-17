@@ -3,6 +3,8 @@
 
 
 #include "include.h"
+#include "config.h"
+
 #include "newmat.h"
 
 #include "tmt.h"

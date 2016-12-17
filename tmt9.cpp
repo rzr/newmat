@@ -1,6 +1,8 @@
 //#define WANT_STREAM
 
 #include "include.h"
+#include "config.h"
+
 #include "newmatap.h"
 
 #include "tmt.h"

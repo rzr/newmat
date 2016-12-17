@@ -6,6 +6,8 @@
 #define WANT_FSTREAM
 
 #include "include.h"
+#include "config.h"
+
 
 #include "newmat.h"
 #include "newmatio.h"

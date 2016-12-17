@@ -5,6 +5,8 @@
 #define WANT_STREAM                  // include.h will get stream fns
 
 #include "include.h"                 // include standard files
+#include "config.h"
+
 #include "newmat.h"
 
 #ifdef use_namespace

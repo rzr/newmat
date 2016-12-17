@@ -7,6 +7,8 @@
 #define WANT_MATH
 
 #include "include.h"
+#include "config.h"
+
 #include "solution.h"
 
 #ifdef use_namespace

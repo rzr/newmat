@@ -4,6 +4,7 @@
 
 
 #include "include.h"
+#include "config.h"
 
 #include "newmatap.h"
 
