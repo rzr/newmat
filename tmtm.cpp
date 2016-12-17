@@ -8,6 +8,7 @@
 #include "tmt.h"
 
 #ifdef use_namespace
+using namespace std; //#~rzr : needed for msvc
 using namespace NEWMAT;
 #endif
 
